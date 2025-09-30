@@ -1,8 +1,8 @@
 #this is a test
 # Snakefile for downloading Ostreococcus tauri SRA datasets
 # using fasterq-dump
-
-# List of accession IDs for O. tauri (replace with your own IDs)
+#one more change for github test
+# One SRA Id for O.tauri, to add more using edirect later
 SAMPLES = [
     "SRR12345678"
 ]
@@ -15,8 +15,8 @@ rule download_fastq:
     output:
         "data/{sample}.fastq"
     params:
-        # you can add options like --split-files for paired-end
-        extra="--threads 4 --progress"
+        #suggested by chatgpt is 4 threads, what should I use when I run this on phoenix?
+        extra="--threads 4 --progress --split-files"
     shell:
         """
         fasterq-dump {params.extra} -O data {wildcards.sample}
