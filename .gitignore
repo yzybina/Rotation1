@@ -1,0 +1,7 @@
+#example smakemake from Chris
+align_reads.smk
+#data folder
+data/
+#results folder
+results/
+
