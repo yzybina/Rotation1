@@ -16,7 +16,7 @@ rule all:
     input:
         expand("data/{sample}_1.fastq", sample=SAMPLES),
         expand("data/{sample}_2.fastq", sample=SAMPLES),
-        expand("edirect_results/{taxid}.sra.txt", taxid=TAXIDS)
+        expand("edirect_results/{taxid}.sra.txt", taxid=TAXIDS),
         expand("metadata/{sample}_metadata.tsv", sample=SAMPLES)
 
 rule download_sra:
